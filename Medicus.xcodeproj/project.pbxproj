@@ -13,6 +13,7 @@
 		88AF60BA1DA8AE5500F35436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AF60B81DA8AE5500F35436 /* Main.storyboard */; };
 		88AF60BC1DA8AE5500F35436 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AF60BB1DA8AE5500F35436 /* Assets.xcassets */; };
 		88AF60BF1DA8AE5500F35436 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AF60BD1DA8AE5500F35436 /* LaunchScreen.storyboard */; };
+		88AF60D51DA8DDD500F35436 /* ClarifaiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF60D41DA8DDD500F35436 /* ClarifaiClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +26,9 @@
 		88AF60BB1DA8AE5500F35436 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88AF60BE1DA8AE5500F35436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88AF60C01DA8AE5500F35436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88AF60CB1DA8C24300F35436 /* MedicusPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MedicusPlayground.playground; sourceTree = SOURCE_ROOT; };
+		88AF60CB1DA8C24300F35436 /* MedicusPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MedicusPlayground.playground; path = ../MedicusPlayground.playground; sourceTree = "<group>"; };
 		88AF60CE1DA8C7E300F35436 /* Medicus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Medicus-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		88AF60D41DA8DDD500F35436 /* ClarifaiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClarifaiClient.swift; sourceTree = "<group>"; };
 		E945A51CA34E94500184F694 /* Pods-Medicus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Medicus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Medicus/Pods-Medicus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 				88AF60CB1DA8C24300F35436 /* MedicusPlayground.playground */,
 				88AF60B41DA8AE5500F35436 /* AppDelegate.swift */,
 				88AF60B61DA8AE5500F35436 /* ViewController.swift */,
+				88AF60D41DA8DDD500F35436 /* ClarifaiClient.swift */,
 				88AF60B81DA8AE5500F35436 /* Main.storyboard */,
 				88AF60BB1DA8AE5500F35436 /* Assets.xcassets */,
 				88AF60BD1DA8AE5500F35436 /* LaunchScreen.storyboard */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88AF60B71DA8AE5500F35436 /* ViewController.swift in Sources */,
+				88AF60D51DA8DDD500F35436 /* ClarifaiClient.swift in Sources */,
 				88AF60B51DA8AE5500F35436 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
