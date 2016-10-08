@@ -139,6 +139,7 @@
 				TargetAttributes = {
 					88AF60B01DA8AE5500F35436 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = W2P5R7TX5B;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -356,6 +357,7 @@
 			baseConfigurationReference = 1A31AB35549717B8293BB620 /* Pods-Medicus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W2P5R7TX5B;
 				INFOPLIST_FILE = Medicus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vjre.Medicus;
@@ -370,6 +372,7 @@
 			baseConfigurationReference = E945A51CA34E94500184F694 /* Pods-Medicus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W2P5R7TX5B;
 				INFOPLIST_FILE = Medicus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vjre.Medicus;
