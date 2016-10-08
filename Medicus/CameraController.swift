@@ -11,6 +11,9 @@ import MobileCoreServices
 
 class CameraController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var cameraButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,5 +25,15 @@ class CameraController: UIViewController, UIImagePickerControllerDelegate, UINav
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func openCameraButton(_ sender: AnyObject) {
+        print("Camera is activating")
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            var imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+   
 }
