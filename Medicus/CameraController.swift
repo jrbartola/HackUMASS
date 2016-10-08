@@ -63,7 +63,7 @@ class CameraController: UIViewController, UIImagePickerControllerDelegate, UINav
                 })
                 device.unlockForConfiguration()
             } catch {
-                
+                print("Failed")
             }
         }
     }
@@ -72,8 +72,8 @@ class CameraController: UIViewController, UIImagePickerControllerDelegate, UINav
     
     
     func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        var anyTouch = touches.anyObject() as! UITouch
-        var touchPercent = anyTouch.location(in: self.view).x / screenWidth
+        let anyTouch = touches.anyObject() as! UITouch
+        let touchPercent = anyTouch.location(in: self.view).x / screenWidth
         focusTo(value: Float(touchPercent))
     }
     
@@ -105,7 +105,7 @@ class CameraController: UIViewController, UIImagePickerControllerDelegate, UINav
     func beginSession() {
         
         configureDevice()
-        print("beginning")
+        print("Beginning capture session")
         var err : NSError? = nil
         do {
             do {
@@ -127,8 +127,8 @@ class CameraController: UIViewController, UIImagePickerControllerDelegate, UINav
         
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         self.view.layer.addSublayer(previewLayer!)
-        previewLayer?.frame = self.view.layer.frame
-        print(self.view.layer.frame)
+        previewLayer?.frame = imageView.layer.frame
+        
         captureSession.startRunning()
     }
     
