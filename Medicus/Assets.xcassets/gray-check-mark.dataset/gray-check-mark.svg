@@ -1,0 +1,18 @@
+<?xml version="1.0"?><svg width="640" height="480" xmlns="http://www.w3.org/2000/svg">
+ <title>Green Check mark</title>
+ <defs>
+  <linearGradient y2="1" x2="1" y1="0.785156" x1="0.824219" id="svg_4">
+   <stop stop-color="#999999" offset="0"/>
+   <stop stop-color="#1c1616" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata id="metadata7">image/svg+xmlCheck mark</metadata>
+ <g>
+  <title>Layer 1</title>
+  <g id="layer1">
+   <g id="layer1-2">
+    <path d="m259.777405,197.676483l31.966919,45.932861c16.287903,-41.108765 36.226868,-78.927048 68.275177,-114.832077c-23.985687,16.757843 -50.425568,48.580048 -73.010895,87.956436l-27.231201,-19.05722z" id="path4068" stroke-miterlimit="4" stroke-width="0" stroke="#000000" fill="url(#svg_4)"/>
+   </g>
+  </g>
+ </g>
+</svg>
