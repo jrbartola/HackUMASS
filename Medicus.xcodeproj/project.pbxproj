@@ -14,6 +14,7 @@
 		88AF60BC1DA8AE5500F35436 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88AF60BB1DA8AE5500F35436 /* Assets.xcassets */; };
 		88AF60BF1DA8AE5500F35436 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AF60BD1DA8AE5500F35436 /* LaunchScreen.storyboard */; };
 		88AF60D51DA8DDD500F35436 /* ClarifaiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF60D41DA8DDD500F35436 /* ClarifaiClient.swift */; };
+		88AF60D71DA8E7E500F35436 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88AF60D61DA8E7E500F35436 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		88AF60CB1DA8C24300F35436 /* MedicusPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MedicusPlayground.playground; path = ../MedicusPlayground.playground; sourceTree = "<group>"; };
 		88AF60CE1DA8C7E300F35436 /* Medicus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Medicus-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		88AF60D41DA8DDD500F35436 /* ClarifaiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClarifaiClient.swift; sourceTree = "<group>"; };
+		88AF60D61DA8E7E500F35436 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E945A51CA34E94500184F694 /* Pods-Medicus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Medicus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Medicus/Pods-Medicus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 				88AF60BB1DA8AE5500F35436 /* Assets.xcassets */,
 				88AF60BD1DA8AE5500F35436 /* LaunchScreen.storyboard */,
 				88AF60C01DA8AE5500F35436 /* Info.plist */,
+				88AF60D61DA8E7E500F35436 /* GoogleService-Info.plist */,
 			);
 			path = Medicus;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88AF60BF1DA8AE5500F35436 /* LaunchScreen.storyboard in Resources */,
+				88AF60D71DA8E7E500F35436 /* GoogleService-Info.plist in Resources */,
 				88AF60BC1DA8AE5500F35436 /* Assets.xcassets in Resources */,
 				88AF60BA1DA8AE5500F35436 /* Main.storyboard in Resources */,
 			);

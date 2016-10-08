@@ -18,19 +18,14 @@ class ViewController: UIViewController {
     }
     
     func trything() {
-        let app = ClarifaiApp(appID: "vrwKMC-M9uaJvSYxRHxGw3LhUNGETvB_fPDJh6gN", appSecret: "9khTBYzmsVjKbiiyBD5umBy6A8JAAkharwNahIJx")
+        let client = ClarifaiClient(apiKey: "vrwKMC-M9uaJvSYxRHxGw3LhUNGETvB_fPDJh6gN", secretKey: "9khTBYzmsVjKbiiyBD5umBy6A8JAAkharwNahIJx")
         //ClarifaiModel
-        
-        let image = ClarifaiImage.init(url: "http://anima.lemerg.com/data/uploads/12/542824.jpg")
-        app?.getModelByName("general-v1.3", completion: { (model: ClarifaiModel?, error: Error?) in
-            
-            model?.predict(on: [image!], completion: { (output, error) in
-                for concept in output![0].concepts! {
-                    print(concept.conceptName!)
-                }
-            })
-            
+        client.getConcepts(url: "http://anima.lemerg.com/data/uploads/12/542824.jpg", conceptCompletion: { (concepts: [String]?) in
+            if let values = concepts {
+                print(concepts)
+            }
         })
+                
         
 
     }
