@@ -18,6 +18,8 @@ enum Diseases {
 
 class CustomModel {
     
+    
+    
     let scImages: [UIImage] = [UIImage(named: "skincancer1")!, UIImage(named: "skincancer2")!, UIImage(named: "skincancer3")!,
                              UIImage(named: "skincancer4")!, UIImage(named: "skincancer5")!, UIImage(named: "skincancer6")!,
                              UIImage(named: "skincancer7")!, UIImage(named: "skincancer8")!, UIImage(named: "skincancer9")!,
@@ -42,7 +44,7 @@ class CustomModel {
         // For every image in the array initialize an instance of ClarifaiImage
         for image in images {
             clarifiedImages.append(ClarifaiImage(image:image, andConcepts:[concept]))
-            
+        
         }
         
         // Add images to the app
@@ -110,9 +112,10 @@ class CustomModel {
         
         if let model = self.model {
             print("Our model is: \(model.name!)")
-            model.predict(on: images, completion: { (output, error) in
-                if let output = output {
-                    print(output.count)
+            model.predict(on: images, completion: { (conceptArr, error) in
+                print("Before: \(conceptArr)")
+                if let output = conceptArr {
+                    print("After: \(output)")
                     for o in output {
                         if let predictions = o.concepts {
                             for predict in predictions {

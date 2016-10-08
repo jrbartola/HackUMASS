@@ -13,24 +13,21 @@ class ClarifaiClient {
     
     let app: ClarifaiApp
     var picture: ClarifaiImage?
-    /*struct DiseaseModel {
-        let imageUrls: [String] = {}
-    }*/
     
     init(apiKey key: String, secretKey secret: String) {
         app = ClarifaiApp(appID: key, appSecret: secret)
     }
     
-    func getConcepts(url: String, modelName: String, conceptCompletion: @escaping (([String]?) -> Void)) {
+    func getConcepts(url: String, modelName: String, conceptCompletion: @escaping (([(String, Float)]?) -> Void)) {
         let image = ClarifaiImage.init(url: url)
-        app.getModelByName("general-v1.3", completion: { (model: ClarifaiModel?, error: Error?) in
+        app.getModelByName(modelName, completion: { (model: ClarifaiModel?, error: Error?) in
             
             model?.predict(on: [image!], completion: { (output, error) in
                 if let concepts = output?[0].concepts {
-                    var arr: [String] = []
+                    var arr: [(String, Float)] = []
                     // Iterate through concepts and add them to an array as Strings
                     for concept in concepts {
-                        arr.append(concept.conceptName!)
+                        arr.append((concept.conceptName!, concept.score))
                     }
                     conceptCompletion(arr)
                 } else {
@@ -43,7 +40,7 @@ class ClarifaiClient {
     }
     
     // Default modelName is 'general-v1.3'
-    func getConcepts(url: String, conceptCompletion: @escaping (([String]?) -> Void)) {
+    func getConcepts(url: String, conceptCompletion: @escaping (([(String, Float)]?) -> Void)) {
         return getConcepts(url: url, modelName: "general-v1.3", conceptCompletion: { (concepts) in
             if let cps = concepts {
                 conceptCompletion(cps)

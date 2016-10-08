@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Medicus/ClarifaiClient.swift"
-            timestampString = "497643484.530971"
+            timestampString = "497653004.266594"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "getConcepts(url:modelName:conceptCompletion:)"
             landmarkType = "7">
          </BreakpointContent>
