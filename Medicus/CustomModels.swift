@@ -16,7 +16,7 @@ enum Diseases {
     case ringworm
 }
 
-struct CustomModels {
+class CustomModel {
     
     let scImages: [UIImage] = [UIImage(named: "skincancer1")!, UIImage(named: "skincancer2")!, UIImage(named: "skincancer3")!,
                              UIImage(named: "skincancer4")!, UIImage(named: "skincancer5")!, UIImage(named: "skincancer6")!,
@@ -32,7 +32,8 @@ struct CustomModels {
                                   UIImage(named: "hives4")!, UIImage(named: "hives5")!, UIImage(named: "hives6")!,
                                   UIImage(named: "hives7")!, UIImage(named: "hives8")!, UIImage(named: "hives9")!,
                                   UIImage(named: "hives10")!]
-    let app: ClarifaiApp
+    let client: ClarifaiClient
+    var predictions: [String] = []
     var model: ClarifaiModel?
     
     func add(images: [UIImage], concept: String) {
@@ -44,15 +45,16 @@ struct CustomModels {
         }
         
         // Add images to the app
-        app.add(clarifiedImages, completion: { (input, error) in
+        client.app.add(clarifiedImages, completion: { (input, error) in
             self.createModel(name: concept, concept: ClarifaiConcept(conceptName: concept))
         })
         
     }
     
-    init(applicaiton app: ClarifaiApp, disease: Diseases) {
+    init(applicaiton client: ClarifaiClient, disease: Diseases) {
         // Initialize each model depending on which disease is specified
-        self.app = app
+        self.client = client
+        //self.model = nil
         switch disease {
         case .cancer:
             add(images: scImages, concept: "Skin Cancer")
@@ -65,11 +67,50 @@ struct CustomModels {
     }
     
     private func createModel(name: String, concept: ClarifaiConcept) {
-        app.createModel([concept], name: name, conceptsMutuallyExclusive: false, closedEnvironment: false, completion: { (model, error) in
+        
+        client.app.createModel([concept], name: name, conceptsMutuallyExclusive: false, closedEnvironment: false, completion: { (endModel, error) in
+            
+            // Set our model
             
             
+            self.model = endModel
         })
         
+    }
+    
+    
+    func trainModel() {
+        if let model = self.model {
+            client.app.getModelByID(model.modelID, completion: { (retModel, error) in
+                if let toTrain = retModel {
+                    toTrain.train() { (trainedModel, error1) in
+                        self.model = trainedModel
+                    }
+                }
+            })
+        }
+    }
+    
+    func predict(images: [ClarifaiImage], completion: @escaping ([String]) -> Void) {
+        
+        if let model = self.model {
+            print("predict function")
+            model.predict(on: images, completion: { (output, error) in
+                if let output = output {
+                    for o in output {
+                        if let predictions = o.concepts {
+                            for predict in predictions {
+                                print("First concept: \(predict.conceptName)")
+                                self.predictions.append(predict.conceptName)
+                            }
+                            // call completion handler with the prediction data
+                            completion(self.predictions)
+                            
+                        }
+                    }
+                }
+            })
+        }
     }
     
     

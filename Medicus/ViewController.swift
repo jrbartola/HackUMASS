@@ -19,14 +19,20 @@ class ViewController: UIViewController {
     
     func trything() {
         let client = ClarifaiClient(apiKey: "vrwKMC-M9uaJvSYxRHxGw3LhUNGETvB_fPDJh6gN", secretKey: "9khTBYzmsVjKbiiyBD5umBy6A8JAAkharwNahIJx")
-        //ClarifaiModel
+
         client.getConcepts(url: "http://anima.lemerg.com/data/uploads/12/542824.jpg", conceptCompletion: { (concepts: [String]?) in
             if let values = concepts {
                 print(concepts)
             }
         })
-                
         
+        let sample = ClarifaiImage(url: "http://cbsnews1.cbsistatic.com/hub/i/2012/10/03/ff9e464c-a644-11e2-a3f0-029118418759/SCF-IntermediateMelanoma-0333.jpg")
+        
+        let cancerModel = CustomModel(applicaiton: client, disease: .cancer)
+        cancerModel.trainModel()
+        cancerModel.predict(images: [sample!], completion: { (predictions) in
+            print("Some predictions for this image are: \(predictions)")
+        })
 
     }
 
