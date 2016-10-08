@@ -1,2 +1,3 @@
-# HackUMASS
-Private repository for HackUMASS 2016
+# Medicus
+
+Skin diagnosis application which identifies various injuries and skin conditions while providing accurate a realtime accurate diagnosis
