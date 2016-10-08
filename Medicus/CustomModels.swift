@@ -9,11 +9,6 @@
 import Foundation
 import Clarifai
 
-/*
-struct CustomModels {
-    
-    var images
-}*/
 
 enum Diseases {
     case cancer
@@ -33,19 +28,24 @@ struct CustomModels {
                                   UIImage(named: "ringworm7")!, UIImage(named: "ringworm8")!, UIImage(named: "ringworm9")!,
                                   UIImage(named: "ringworm10")!]
     
-    let hivesImages: [UIImage] = []
+    let hivesImages: [UIImage] = [UIImage(named: "hives1")!, UIImage(named: "hives2")!, UIImage(named: "hives3")!,
+                                  UIImage(named: "hives4")!, UIImage(named: "hives5")!, UIImage(named: "hives6")!,
+                                  UIImage(named: "hives7")!, UIImage(named: "hives8")!, UIImage(named: "hives9")!,
+                                  UIImage(named: "hives10")!]
     let app: ClarifaiApp
+    var model: ClarifaiModel?
     
-    func add(images: [UIImage]) {
+    func add(images: [UIImage], concept: String) {
         var clarifiedImages: [ClarifaiImage] = []
         // For every image in the array initialize an instance of ClarifaiImage
         for image in images {
-            clarifiedImages.append(ClarifaiImage(image:image))
+            clarifiedImages.append(ClarifaiImage(image:image, andConcepts:[concept]))
+            
         }
         
         // Add images to the app
         app.add(clarifiedImages, completion: { (input, error) in
-            
+            createModel(concept, ClarifaiConcept(conceptName: concept))
         })
         
     }
@@ -55,15 +55,25 @@ struct CustomModels {
         self.app = app
         switch disease {
         case .cancer:
-            add(images: scImages)
+            add(images: scImages, concept: "Skin Cancer")
         case .hives:
-            add(images: hivesImages)
+            add(images: hivesImages, concept: "Hives")
         case .ringworm:
-            add(images: ringwormImages)
+            add(images: ringwormImages, concept: "Ringworm")
         }
         
-    }
+        //ClarifaiConcept.
         
+    }
+    
+    private func createModel(name: String, concept: ClarifaiConcept) {
+        app.createModel([concept], name: name, conceptsMutuallyExclusive: false, closedEnvironment: false, completion: { (model, error) in
+            
+            
+        })
+        
+    }
+    
     
     
     
