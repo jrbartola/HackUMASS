@@ -11,6 +11,8 @@ import MobileCoreServices
 
 class CameraController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    
+    @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
@@ -23,6 +25,7 @@ class CameraController: UIViewController, UIImagePickerControllerDelegate, UINav
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     @IBAction func openCameraButton(_ sender: AnyObject) {
         print("Camera is activating")
