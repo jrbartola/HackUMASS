@@ -45,7 +45,7 @@ struct CustomModels {
         
         // Add images to the app
         app.add(clarifiedImages, completion: { (input, error) in
-            createModel(concept, ClarifaiConcept(conceptName: concept))
+            self.createModel(name: concept, concept: ClarifaiConcept(conceptName: concept))
         })
         
     }
@@ -61,8 +61,6 @@ struct CustomModels {
         case .ringworm:
             add(images: ringwormImages, concept: "Ringworm")
         }
-        
-        //ClarifaiConcept.
         
     }
     
