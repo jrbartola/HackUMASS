@@ -13,6 +13,9 @@ class ClarifaiClient {
     
     let app: ClarifaiApp
     var picture: ClarifaiImage?
+    /*struct DiseaseModel {
+        let imageUrls: [String] = {}
+    }*/
     
     init(apiKey key: String, secretKey secret: String) {
         app = ClarifaiApp(appID: key, appSecret: secret)

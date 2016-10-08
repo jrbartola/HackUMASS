@@ -15,7 +15,7 @@
 		88AF60BF1DA8AE5500F35436 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AF60BD1DA8AE5500F35436 /* LaunchScreen.storyboard */; };
 		88AF60D51DA8DDD500F35436 /* ClarifaiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF60D41DA8DDD500F35436 /* ClarifaiClient.swift */; };
 		88AF60D71DA8E7E500F35436 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88AF60D61DA8E7E500F35436 /* GoogleService-Info.plist */; };
-		88AF60D91DA8ED6800F35436 /* ClarifaiCustomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF60D81DA8ED6800F35436 /* ClarifaiCustomModel.swift */; };
+		88AF60DB1DA95B0300F35436 /* CustomModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF60DA1DA95B0300F35436 /* CustomModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,7 @@
 		88AF60CE1DA8C7E300F35436 /* Medicus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Medicus-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		88AF60D41DA8DDD500F35436 /* ClarifaiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClarifaiClient.swift; sourceTree = "<group>"; };
 		88AF60D61DA8E7E500F35436 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		88AF60D81DA8ED6800F35436 /* ClarifaiCustomModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClarifaiCustomModel.swift; sourceTree = "<group>"; };
+		88AF60DA1DA95B0300F35436 /* CustomModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModels.swift; sourceTree = "<group>"; };
 		E945A51CA34E94500184F694 /* Pods-Medicus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Medicus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Medicus/Pods-Medicus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +83,7 @@
 				88AF60B41DA8AE5500F35436 /* AppDelegate.swift */,
 				88AF60B61DA8AE5500F35436 /* ViewController.swift */,
 				88AF60D41DA8DDD500F35436 /* ClarifaiClient.swift */,
-				88AF60D81DA8ED6800F35436 /* ClarifaiCustomModel.swift */,
+				88AF60DA1DA95B0300F35436 /* CustomModels.swift */,
 				88AF60B81DA8AE5500F35436 /* Main.storyboard */,
 				88AF60BB1DA8AE5500F35436 /* Assets.xcassets */,
 				88AF60BD1DA8AE5500F35436 /* LaunchScreen.storyboard */,
@@ -227,7 +227,7 @@
 			files = (
 				88AF60B71DA8AE5500F35436 /* ViewController.swift in Sources */,
 				88AF60D51DA8DDD500F35436 /* ClarifaiClient.swift in Sources */,
-				88AF60D91DA8ED6800F35436 /* ClarifaiCustomModel.swift in Sources */,
+				88AF60DB1DA95B0300F35436 /* CustomModels.swift in Sources */,
 				88AF60B51DA8AE5500F35436 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
