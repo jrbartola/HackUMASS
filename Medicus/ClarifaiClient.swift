@@ -48,8 +48,17 @@ class ClarifaiClient {
                 conceptCompletion(nil)
             }
         })
-        
+        //ClarifaiConcept.init(conceptName: <#T##String!#>)
     }
+    
+    
+    /*
+    func createModel() {
+        
+        app.add(<#T##inputs: [ClarifaiInput]!##[ClarifaiInput]!#>, completion: <#T##ClarifaiInputsCompletion!##ClarifaiInputsCompletion!##([ClarifaiInput]?, Error?) -> Void#>)
+    }*/
+    
+    
     
     
 }
