@@ -27,12 +27,21 @@ class ViewController: UIViewController {
         })
         
         let sample = ClarifaiImage(url: "http://cbsnews1.cbsistatic.com/hub/i/2012/10/03/ff9e464c-a644-11e2-a3f0-029118418759/SCF-IntermediateMelanoma-0333.jpg")
+        let sample2 = ClarifaiImage(url: "http://ichef-1.bbci.co.uk/news/660/media/images/77303000/jpg/_77303278_skin_cancer-spl-1.jpg")
+        let sample3 = ClarifaiImage(url: "http://www.bicycling.com/sites/bicycling.com/files/styles/slideshow-desktop/public/black-mole.jpg")
         
+        //var cancerModel: CustomModel
         let cancerModel = CustomModel(applicaiton: client, disease: .cancer)
-        cancerModel.trainModel()
-        cancerModel.predict(images: [sample!], completion: { (predictions) in
-            print("Some predictions for this image are: \(predictions)")
-        })
+        cancerModel.initialize() { (this) in
+            this.trainModel() { (thisModel) in
+                thisModel.predict(images: [sample!, sample2!, sample3!], completion: { (predictions) in
+                    print("Some predictions for this image are: \(predictions)")
+                })
+            }
+            
+        }
+        
+        //cancerModel
 
     }
 
