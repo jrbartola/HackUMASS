@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E7136FD79AC78C66E6B125E /* Pods_Medicus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8322FF58F764987D34DF6655 /* Pods_Medicus.framework */; };
 		88AF60B51DA8AE5500F35436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF60B41DA8AE5500F35436 /* AppDelegate.swift */; };
 		88AF60B71DA8AE5500F35436 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF60B61DA8AE5500F35436 /* ViewController.swift */; };
 		88AF60BA1DA8AE5500F35436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AF60B81DA8AE5500F35436 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A31AB35549717B8293BB620 /* Pods-Medicus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Medicus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Medicus/Pods-Medicus.debug.xcconfig"; sourceTree = "<group>"; };
+		8322FF58F764987D34DF6655 /* Pods_Medicus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Medicus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88AF60B11DA8AE5500F35436 /* Medicus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Medicus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88AF60B41DA8AE5500F35436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88AF60B61DA8AE5500F35436 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		88AF60BB1DA8AE5500F35436 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88AF60BE1DA8AE5500F35436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88AF60C01DA8AE5500F35436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88AF60CB1DA8C24300F35436 /* MedicusPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MedicusPlayground.playground; sourceTree = SOURCE_ROOT; };
+		88AF60CE1DA8C7E300F35436 /* Medicus-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Medicus-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		E945A51CA34E94500184F694 /* Pods-Medicus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Medicus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Medicus/Pods-Medicus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7136FD79AC78C66E6B125E /* Pods_Medicus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D3596B1E513768EE2B0ABCE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A31AB35549717B8293BB620 /* Pods-Medicus.debug.xcconfig */,
+				E945A51CA34E94500184F694 /* Pods-Medicus.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		88AF60A81DA8AE5500F35436 = {
 			isa = PBXGroup;
 			children = (
 				88AF60B31DA8AE5500F35436 /* Medicus */,
 				88AF60B21DA8AE5500F35436 /* Products */,
+				4D3596B1E513768EE2B0ABCE /* Pods */,
+				B6EC39ED313A728B9FEAE327 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +72,8 @@
 		88AF60B31DA8AE5500F35436 /* Medicus */ = {
 			isa = PBXGroup;
 			children = (
+				88AF60CE1DA8C7E300F35436 /* Medicus-Bridging-Header.h */,
+				88AF60CB1DA8C24300F35436 /* MedicusPlayground.playground */,
 				88AF60B41DA8AE5500F35436 /* AppDelegate.swift */,
 				88AF60B61DA8AE5500F35436 /* ViewController.swift */,
 				88AF60B81DA8AE5500F35436 /* Main.storyboard */,
@@ -64,6 +84,14 @@
 			path = Medicus;
 			sourceTree = "<group>";
 		};
+		B6EC39ED313A728B9FEAE327 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8322FF58F764987D34DF6655 /* Pods_Medicus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +99,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88AF60C31DA8AE5500F35436 /* Build configuration list for PBXNativeTarget "Medicus" */;
 			buildPhases = (
+				29EE8856A9C8056A2FA7C00A /* [CP] Check Pods Manifest.lock */,
 				88AF60AD1DA8AE5500F35436 /* Sources */,
 				88AF60AE1DA8AE5500F35436 /* Frameworks */,
 				88AF60AF1DA8AE5500F35436 /* Resources */,
+				B74FCA13A6581ADC425EDDE3 /* [CP] Embed Pods Frameworks */,
+				2DE454F1E20B1D70C1D9B532 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +162,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		29EE8856A9C8056A2FA7C00A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2DE454F1E20B1D70C1D9B532 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Medicus/Pods-Medicus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B74FCA13A6581ADC425EDDE3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Medicus/Pods-Medicus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		88AF60AD1DA8AE5500F35436 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -181,6 +260,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -230,6 +310,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -256,24 +337,28 @@
 		};
 		88AF60C41DA8AE5500F35436 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A31AB35549717B8293BB620 /* Pods-Medicus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Medicus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vjre.Medicus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Medicus-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		88AF60C51DA8AE5500F35436 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E945A51CA34E94500184F694 /* Pods-Medicus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Medicus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vjre.Medicus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Medicus-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -297,6 +382,7 @@
 				88AF60C51DA8AE5500F35436 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
