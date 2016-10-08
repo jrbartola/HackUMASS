@@ -48,15 +48,15 @@ class ClarifaiClient {
                 conceptCompletion(nil)
             }
         })
-        //ClarifaiConcept.init(conceptName: <#T##String!#>)
+        
     }
     
-    
-    /*
-    func createModel() {
+    func addImage(url: String, concepts: [String]?) {
+        let image = ClarifaiImage.init(url: url, andConcepts: concepts)
+        //self.images.append(image!)
         
-        app.add(<#T##inputs: [ClarifaiInput]!##[ClarifaiInput]!#>, completion: <#T##ClarifaiInputsCompletion!##ClarifaiInputsCompletion!##([ClarifaiInput]?, Error?) -> Void#>)
-    }*/
+    }
+    
     
     
     
