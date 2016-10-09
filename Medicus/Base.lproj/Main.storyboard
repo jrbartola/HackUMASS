@@ -42,12 +42,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Oo-ih-Jgf">
-                                        <frame key="frameInset" minX="93" minY="20" width="58" height="58"/>
+                                        <frame key="frameInset" minX="73" minY="20" width="58" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="capture"/>
                                         <connections>
                                             <action selector="captureButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="KGf-Dy-LYn"/>
-                                            <action selector="openCameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FsO-Xn-MlV"/>
+                                            <action selector="snapPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="76v-YZ-urN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFA-QN-bML">
+                                        <frame key="frameInset" minX="139" minY="60" width="43" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="brain"/>
+                                        <connections>
+                                            <action selector="setCancer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ugk-xT-ER2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1L-NF-UGx">
+                                        <frame key="frameInset" minX="190" minY="60" width="43" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="brain"/>
+                                        <connections>
+                                            <action selector="setHives:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rdq-QT-pen"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -67,6 +83,14 @@
                                             <segue destination="Lz6-gh-Feg" kind="show" identifier="diagnosisSegue" id="PAG-kZ-76e"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MlY-Qc-Ynk">
+                                        <frame key="frameInset" minX="-17" minY="60" width="43" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="brain"/>
+                                        <connections>
+                                            <action selector="setNone:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PDb-d0-jOh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31240366901943872" green="0.57781250000000006" blue="0.40256926505980656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,12 +106,15 @@
                     <connections>
                         <outlet property="cameraButton" destination="2Oo-ih-Jgf" id="yEi-Im-XyM"/>
                         <outlet property="imageView" destination="5Bs-Xr-c0F" id="hUg-p6-dKQ"/>
+                        <outlet property="scheme1" destination="MFA-QN-bML" id="E9m-NI-xyT"/>
+                        <outlet property="scheme2" destination="E1L-NF-UGx" id="yZx-5E-3xc"/>
+                        <outlet property="scheme3" destination="MlY-Qc-Ynk" id="NIX-gR-YLS"/>
                         <outlet property="segueButton" destination="uO2-S3-Fy7" id="NWC-7s-zW6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="17" y="139"/>
+            <point key="canvasLocation" x="16.800000000000001" y="138.98050974512745"/>
         </scene>
         <!--Report Controller-->
         <scene sceneID="akQ-eY-OEh">
@@ -185,8 +212,8 @@ Symptoms include redness, itching, and tearing of the eyes. It can also lead to 
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confidence level:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xv-42-hbf">
-                                        <frame key="frameInset" minX="72" minY="135" width="147" height="27"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Severity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xv-42-hbf">
+                                        <frame key="frameInset" minX="79" minY="135" width="147" height="27"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -197,7 +224,7 @@ Symptoms include redness, itching, and tearing of the eyes. It can also lead to 
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MEDIUM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERe-b5-1nD">
-                                        <frame key="frameInset" minX="227" minY="132" width="88" height="33"/>
+                                        <frame key="frameInset" minX="164" minY="132" width="88" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

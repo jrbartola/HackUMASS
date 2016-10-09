@@ -35,6 +35,7 @@ class ReportController: UIViewController {
         conditionNameLabel.text = diagnosis
         //let confidence = arc4random_uniform(3)
         
+        /*
         if confidence > 0.70 {
             confidenceLabel.text = "HIGH"
             confidenceLabel.textColor = UIColor.red
@@ -44,18 +45,29 @@ class ReportController: UIViewController {
         } else {
             confidenceLabel.text = "LOW"
             confidenceLabel.textColor = UIColor.green
-        }
+        }*/
         
         if (diagnosis == "Skin Cancer") {
+            confidenceLabel.text = "HIGH"
+            confidenceLabel.textColor = UIColor.red
             conditionDescriptionLabel.text = cancerDesc
             diseaseImageView.image = UIImage(named: "skincancer6")
             treatmentLabel.text = "Seek urgent care"
+            treatmentLabel.textColor = UIColor.red
         } else if (diagnosis == "Hives") {
+            confidenceLabel.text = "MEDIUM"
+            confidenceLabel.textColor = UIColor.orange
             conditionDescriptionLabel.text = hivesDesc
             diseaseImageView.image = UIImage(named: "hives3")
+            treatmentLabel.text = "Antihistamines"
         } else {
-            conditionDescriptionLabel.text = ringwormDesc
-            diseaseImageView.image = UIImage(named: "ringworm8")
+            confidenceLabel.text = "N/A"
+            conditionDescriptionLabel.text = "Could not identify skin condition. Please try another picture"
+            diseaseImageView.image = UIImage(named: "redx")
+            treatmentLabel.text = "N/A"
+            //conditionDescriptionLabel.text = ringwormDesc
+            //diseaseImageView.image = UIImage(named: "ringworm8")
+            
         }
         // Do any additional setup after loading the view.
     }

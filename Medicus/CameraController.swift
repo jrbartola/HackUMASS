@@ -24,6 +24,14 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     let captureSession = AVCaptureSession()
     var previewLayer : AVCaptureVideoPreviewLayer?
     
+   
+    @IBOutlet weak var scheme1: UIButton!
+    
+    @IBOutlet weak var scheme2: UIButton!
+    
+    @IBOutlet weak var scheme3: UIButton!
+    
+    
     // If we find a device we'll store it here for later use
     var captureDevice : AVCaptureDevice?
     var client: ClarifaiClient? = nil
@@ -39,10 +47,10 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
         let client = ClarifaiClient(apiKey: "vikmP0140G5t-f9_3pCztAoiAY7V0-30eil5I0Rc",
                                     secretKey: "YuOjJnxaSYVSzjxhdWy1x7MABUzCjLIsJW9R3sl2")
         
-        let custom = CustomModel(applicaiton: client, disease: .cancer)
-        picArr = custom.toHugeArray()
+        //let custom = CustomModel(applicaiton: client, disease: .cancer)
+        //picArr = custom.toHugeArray()
         
-        let chosenPic = picArr[Int(arc4random_uniform(30))]
+        /*let chosenPic = picArr[Int(arc4random_uniform(30))]
         client.getConcepts(image: chosenPic, modelName: "Medicus-3", conceptCompletion: { (tupleArr) in
             if let tuples = tupleArr {
                 if tuples.count != 0 {
@@ -52,7 +60,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
                     
                 }
             }
-        })
+        })*/
         
         let music = Bundle.main.path(forResource: "snap", ofType: "mp3")
         
@@ -223,7 +231,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
         dismiss(animated: true, completion: nil)
     }*/
     
-    @IBAction func openCameraButton(_ sender: UIButton) {
+    /*@IBAction func openCameraButton(_ sender: UIButton) {
         
         print("Should take a picture")
         let output = AVCapturePhotoOutput()
@@ -235,8 +243,35 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
         
         let stillImageOutput = AVCaptureStillImageOutput()
         stillImageOutput.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
+        if self != nil {
+            output.capturePhoto(with: settings, delegate: self)
+        }
+        
+        
+    }*/
+    
+    
+    @IBAction func snapPhoto(_ sender: AnyObject) {
+        print("Should take a picture")
+        //AVCapturePhotoOutput()
+        let output = AVCapturePhotoOutput()
+        audioPlayer.play()
+        cameraButton.tintColor = UIColor.clear
+        // TODO: Take picture and set it to the imageView background
+        //let settings = AVCapturePhotoSettings()
+        //settings.flashMode = .off
+        
+        //let stillImageOutput = AVCaptureStillImageOutput()
+        //stillImageOutput.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
+        //print("settings are \(output)")
+        //output.capturePhoto(with: settings, delegate: self)
+        
+        
+        
         
     }
+    
+    
     /*
     func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
         let i = previewPhotoSampleBuffer as! UIImage
@@ -318,6 +353,24 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
                  error: Error?){
         print("executed")
         print(outputFileURL)
+    }
+    
+    func capture(_ captureOutput: AVCapturePhotoOutput, didCapturePhotoForResolvedSettings resolvedSettings: AVCaptureResolvedPhotoSettings) {
+        print("executed")
+    }
+    
+    
+    @IBAction func setCancer(_ sender: AnyObject) {
+        self.diagnosis = "Skin Cancer"
+    }
+    
+    
+    @IBAction func setHives(_ sender: AnyObject) {
+        self.diagnosis = "Hives"
+    }
+    
+    @IBAction func setNone(_ sender: AnyObject) {
+        self.diagnosis = "Try Again"
     }
     
     
