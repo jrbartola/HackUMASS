@@ -51,7 +51,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
                 if(device.position == AVCaptureDevicePosition.back) {
                     captureDevice = device as? AVCaptureDevice
                     if captureDevice != nil {
-                        print("Capture device found")
+                        
                         beginSession()
                     }
                 }
@@ -95,7 +95,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
             do {
                 try device.lockForConfiguration()
                 device.focusMode = .locked
-                print("Devce is being configured.")
+                
                 //device.isAdjustingFocus = true
                 
                 device.unlockForConfiguration()
@@ -111,7 +111,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     func beginSession() {
         
         configureDevice()
-        print("Beginning capture session")
+        
         var err : NSError? = nil
         do {
             do {
@@ -220,20 +220,28 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "diagnosisSegue" {
+            
             if let destination = segue.destination as? ReportController {
-                
+                print("in the block")
                 let rand = arc4random_uniform(3)
                 if rand == 0 {
                     destination.diagnosis = "Skin Cancer"
-                    destination.conditionDescriptionLabel.text = destination.cancerDesc
+                    
+                    //destination.conditionDescriptionLabel.text = destination.cancerDesc
+                    print("cancers")
                 } else if rand == 1 {
                     destination.diagnosis = "Hives"
-                    destination.conditionDescriptionLabel.text = destination.hivesDesc
+                    
+                    //destination.conditionDescriptionLabel.text = destination.hivesDesc
+                    print("ihives")
                 } else {
                     destination.diagnosis = "Ringworm"
-                    destination.conditionDescriptionLabel.text = destination.ringwormDesc
+                    
+                    //destination.conditionDescriptionLabel.text = destination.ringwormDesc
+                    print("ringworm")
                 }
-                destination.conditionNameLabel.text = destination.diagnosis
+                print("ioutsude")
+                //destination.conditionNameLabel.text = destination.diagnosis
                 
             }
         }
