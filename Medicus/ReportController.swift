@@ -18,6 +18,10 @@ class ReportController: UIViewController {
         "They may also burn or sting. Often the patches of rash move around. Typically they last a few days and " +
         "do not leave any long lasting skin changes. Fewer than 5% of cases last for more than six weeks."
     
+    let ringwormDesc = "Ringworm is a fungal infection of the skin. Typically it results in a red, itchy, scaly, circular rash. Hair loss may occur in the area affected. Symptoms begin four to fourteen days after exposure. Multiple areas can be affected at a given time."
+    
+    var diagnosis: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

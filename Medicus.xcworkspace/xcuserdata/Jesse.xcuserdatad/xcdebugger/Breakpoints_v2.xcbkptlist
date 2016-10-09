@@ -79,7 +79,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
             endingLineNumber = "80"
-            landmarkName = "touchesMoved(touches:withEvent:)"
+            landmarkName = "touchesBegan(touches:withEvent:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

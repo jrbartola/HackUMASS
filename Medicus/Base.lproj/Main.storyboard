@@ -63,6 +63,13 @@
                                         <frame key="frameInset" minX="26" minY="17" width="66" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uO2-S3-Fy7">
+                                        <frame key="frameInset" minX="26" minY="17" width="66" height="65"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <segue destination="Lz6-gh-Feg" kind="show" id="PAG-kZ-76e"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31240366901943872" green="0.57781250000000006" blue="0.40256926505980656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,6 +85,7 @@
                     <connections>
                         <outlet property="cameraButton" destination="2Oo-ih-Jgf" id="yEi-Im-XyM"/>
                         <outlet property="imageView" destination="5Bs-Xr-c0F" id="hUg-p6-dKQ"/>
+                        <outlet property="segueButton" destination="uO2-S3-Fy7" id="NWC-7s-zW6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -14,6 +14,7 @@ class CameraController: UIViewController, UIImagePickerControllerDelegate, UINav
 AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
 
     
+    @IBOutlet weak var segueButton: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -53,6 +54,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
             }
         }
     }
+    
     
     func focusTo(value: Float) {
         if let device = captureDevice {
@@ -121,7 +123,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
         
         //let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) as AVCaptureDevice
         
-        do {
+        /*do {
             let deviceInput = try AVCaptureDeviceInput(device: captureDevice)
             
             captureSession.beginConfiguration()
@@ -151,7 +153,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
         
         if err != nil {
             print("error: \(err?.localizedDescription)")
-        }
+        }*/
         
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         self.view.layer.addSublayer(previewLayer!)
@@ -211,6 +213,25 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(captureOutput: AVCaptureOutput!, didDropSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
         // Here you can count how many frames are dopped
     }*/
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "diagnosisSegue" {
+            if let destination = segue.destination as? ReportController {
+                
+                let rand = arc4random_uniform(3)
+                if rand == 0 {
+                    destination.diagnosis = "Skin Cancer"
+                } else if rand == 1 {
+                    destination.diagnosis = "Hives"
+                } else {
+                    destination.diagnosis = "Ringworm"
+                }
+                
+            }
+        }
+    }
+    
+    
     
     
 }
