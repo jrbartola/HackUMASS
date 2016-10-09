@@ -17,6 +17,7 @@
 		88AF60D71DA8E7E500F35436 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88AF60D61DA8E7E500F35436 /* GoogleService-Info.plist */; };
 		88AF60DB1DA95B0300F35436 /* CustomModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF60DA1DA95B0300F35436 /* CustomModels.swift */; };
 		88AF60DD1DA9985C00F35436 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF60DC1DA9985C00F35436 /* CameraController.swift */; };
+		88AF60DF1DA9C02E00F35436 /* ReportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF60DE1DA9C02E00F35436 /* ReportController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		88AF60D61DA8E7E500F35436 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		88AF60DA1DA95B0300F35436 /* CustomModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomModels.swift; sourceTree = "<group>"; };
 		88AF60DC1DA9985C00F35436 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		88AF60DE1DA9C02E00F35436 /* ReportController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportController.swift; sourceTree = "<group>"; };
 		E945A51CA34E94500184F694 /* Pods-Medicus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Medicus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Medicus/Pods-Medicus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				88AF60D41DA8DDD500F35436 /* ClarifaiClient.swift */,
 				88AF60DA1DA95B0300F35436 /* CustomModels.swift */,
 				88AF60B81DA8AE5500F35436 /* Main.storyboard */,
+				88AF60DE1DA9C02E00F35436 /* ReportController.swift */,
 				88AF60DC1DA9985C00F35436 /* CameraController.swift */,
 				88AF60BB1DA8AE5500F35436 /* Assets.xcassets */,
 				88AF60BD1DA8AE5500F35436 /* LaunchScreen.storyboard */,
@@ -234,6 +237,7 @@
 				88AF60DB1DA95B0300F35436 /* CustomModels.swift in Sources */,
 				88AF60B51DA8AE5500F35436 /* AppDelegate.swift in Sources */,
 				88AF60DD1DA9985C00F35436 /* CameraController.swift in Sources */,
+				88AF60DF1DA9C02E00F35436 /* ReportController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
