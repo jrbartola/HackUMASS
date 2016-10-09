@@ -25,7 +25,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     // If we find a device we'll store it here for later use
     var captureDevice : AVCaptureDevice?
     var client: ClarifaiClient? = nil
-    var picArr: [ClarifaiImage] = []
+    var picArr: [UIImage] = []
     
     let imagePicker = UIImagePickerController()
     
@@ -225,25 +225,27 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "diagnosisSegue" {
             let chosenPic = picArr[Int(arc4random_uniform(30))]
-            client.
-            
-            if let destination = segue.destination as? ReportController {
-                
-                let rand = arc4random_uniform(3)
-                if rand == 0 {
-                    destination.diagnosis = "Skin Cancer"
-                    
-                } else if rand == 1 {
-                    destination.diagnosis = "Hives"
-                    
-                } else {
-                    destination.diagnosis = "Ringworm"
-                    
+            client?.getConcepts(image: chosenPic, modelName: "Medicus-3", conceptCompletion: { (tupleArr) in
+                if let tuples = tupleArr {
+                    if tuples.count != 0 {
+                        let diagnosis = tuples[0].0
+                        let confidence = tuples[0].1
+                        
+                        
+                        if let destination = segue.destination as? ReportController {
+                            
+                            print(diagnosis)
+                            destination.diagnosis = diagnosis
+                            
+                            
+                            
+                        }
+                        
+                    }
                 }
-                
-                
-                
-            }
+            })
+            
+            
         }
     }
     

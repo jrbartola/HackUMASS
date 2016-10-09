@@ -135,18 +135,18 @@ class CustomModel {
         }
     }
     
-    func toHugeArray() -> [ClarifaiImage] {
-        var allImgs: [ClarifaiImage] = []
+    func toHugeArray() -> [UIImage] {
+        var allImgs: [UIImage] = []
         for cancer in scImages {
-            allImgs.append(ClarifaiImage(image: cancer))
+            allImgs.append(cancer)
         }
         
         for worm in ringwormImages {
-            allImgs.append(ClarifaiImage(image: worm))
+            allImgs.append(worm)
         }
         
         for hive in hivesImages {
-            allImgs.append(ClarifaiImage(image: hive))
+            allImgs.append(hive)
         }
         
         return allImgs
