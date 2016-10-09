@@ -19,6 +19,8 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
+    var audioPlayer = AVAudioPlayer()
+    
     let captureSession = AVCaptureSession()
     var previewLayer : AVCaptureVideoPreviewLayer?
     
@@ -26,8 +28,8 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     var captureDevice : AVCaptureDevice?
     var client: ClarifaiClient? = nil
     var picArr: [UIImage] = []
-    var diagnosis: String
-    var confidence: Float
+    var diagnosis: String = ""
+    var confidence: Float = 0.0
     
     let imagePicker = UIImagePickerController()
     
@@ -52,7 +54,17 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
             }
         })
         
+        let music = Bundle.main.path(forResource: "snap", ofType: "mp3")
         
+        // Try to initialize the audioplayer
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: music! ))
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+            try AVAudioSession.sharedInstance().setActive(true)
+        }
+        catch{
+            print(error)
+        }
         
         
         imagePicker.delegate = self

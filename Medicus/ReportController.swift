@@ -38,7 +38,7 @@ class ReportController: UIViewController {
         if confidence > 0.70 {
             confidenceLabel.text = "HIGH"
             confidenceLabel.textColor = UIColor.red
-        } else if > 0.50 {
+        } else if confidence > 0.50 {
             confidenceLabel.text = "MEDIUM"
             confidenceLabel.textColor = UIColor.orange
         } else {
