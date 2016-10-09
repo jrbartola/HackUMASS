@@ -225,6 +225,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
                     destination.diagnosis = "Hives"
                 } else {
                     destination.diagnosis = "Ringworm"
+                    
                 }
                 
             }

@@ -22,9 +22,19 @@ class ReportController: UIViewController {
     
     var diagnosis: String = ""
     
+    @IBOutlet weak var conditionDescriptionLabel: UILabel!
+    @IBOutlet weak var conditionNameLabel: UILabel!
+    @IBOutlet weak var confidenceLabel: UILabel!
+    @IBOutlet weak var treatmentLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        conditionNameLabel.text = diagnosis
+        
+        if (diagnosis == "Cancer") {
+            
+        }
         // Do any additional setup after loading the view.
     }
     
