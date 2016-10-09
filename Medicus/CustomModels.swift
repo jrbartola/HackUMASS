@@ -65,18 +65,21 @@ class CustomModel {
     
     func initialize(completion: @escaping (CustomModel) -> Void) {
         var concept: String
-        
+        var images: [UIImage]
         switch disease {
             
         case .cancer:
             concept = "Skin Cancer"
+            images = scImages
         case .hives:
             concept = "Hives"
+            images = hivesImages
         case .ringworm:
             concept = "Ringworm"
+            images = ringwormImages
         }
         
-        add(images: ringwormImages, concept: concept, completion: {(newModel) in
+        add(images: images, concept: concept, completion: {(newModel) in
             completion(newModel)
         })
     }
@@ -96,8 +99,8 @@ class CustomModel {
     
     
     func trainModel(completion: @escaping (CustomModel) -> Void) {
-        if let model = self.model {
-            client.app.getModelByID(model.modelID, completion: { (retModel, error) in
+        //if let model = self.model {
+            client.app.getModelByID("b76b28a8863d436bb4196f830b34e6ac", completion: { (retModel, error) in
                 if let toTrain = retModel {
                     toTrain.train() { (trainedModel, error1) in
                         self.model = trainedModel
@@ -105,7 +108,7 @@ class CustomModel {
                     }
                 }
             })
-        }
+        //}
     }
     
     func predict(images: [ClarifaiImage], completion: @escaping ([String]) -> Void) {

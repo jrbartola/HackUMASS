@@ -23,12 +23,19 @@ class ClarifaiClient {
         app.getModelByName(modelName, completion: { (model: ClarifaiModel?, error: Error?) in
             
             model?.predict(on: [image!], completion: { (output, error) in
-                if let concepts = output?[0].concepts {
+                print(output)
+                if let outputs = output {
+                    
                     var arr: [(String, Float)] = []
                     // Iterate through concepts and add them to an array as Strings
-                    for concept in concepts {
-                        arr.append((concept.conceptName!, concept.score))
+                    if (outputs.count == 0) {
+                        conceptCompletion(nil)
+                    } else {
+                        for concept in outputs[0].concepts {
+                            arr.append((concept.conceptName!, concept.score))
+                        }
                     }
+                    
                     conceptCompletion(arr)
                 } else {
                     conceptCompletion(nil)

@@ -10,26 +10,21 @@ import UIKit
 
 class ReportController: UIViewController {
 
+    let cancerDesc = "Melanoma is one of the most widely-recognized forms of cancer worldwide. It is " +
+        "state to be one of the most deadly types as well. Symptoms include large red legions on the skin, " +
+        "malignant tumors, and discoloration. One may also expreience vomiting and malaise."
+    
+    let hivesDesc = "Hives also known as urticaria, is a kind of skin rash with red, raised, itchy bumps. " +
+        "They may also burn or sting. Often the patches of rash move around. Typically they last a few days and " +
+        "do not leave any long lasting skin changes. Fewer than 5% of cases last for more than six weeks."
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

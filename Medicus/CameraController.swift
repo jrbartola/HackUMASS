@@ -10,7 +10,8 @@ import UIKit
 import MobileCoreServices
 import AVFoundation
 
-class CameraController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CameraController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,
+AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
 
     
     @IBOutlet weak var cameraButton: UIButton!
@@ -23,12 +24,11 @@ class CameraController: UIViewController, UIImagePickerControllerDelegate, UINav
     var captureDevice : AVCaptureDevice?
     
     
-    
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         imagePicker.delegate = self
         
         captureSession.sessionPreset = AVCaptureSessionPresetHigh
@@ -119,6 +119,34 @@ class CameraController: UIViewController, UIImagePickerControllerDelegate, UINav
             print(error)
         }
         
+        //let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo) as AVCaptureDevice
+        
+        do {
+            let deviceInput = try AVCaptureDeviceInput(device: captureDevice)
+            
+            captureSession.beginConfiguration()
+            
+            if (captureSession.canAddInput(deviceInput) == true) {
+                captureSession.addInput(deviceInput)
+            }
+            
+            let dataOutput = AVCaptureVideoDataOutput()
+            dataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as NSString) : NSNumber(value: kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)]
+            dataOutput.alwaysDiscardsLateVideoFrames = true
+            
+            if (captureSession.canAddOutput(dataOutput) == true) {
+                captureSession.addOutput(dataOutput)
+            }
+            
+            captureSession.commitConfiguration()
+            //let i = dispatch_queue_create(<#T##label: UnsafePointer<Int8>?##UnsafePointer<Int8>?#>, <#T##attr: __OS_dispatch_queue_attr?##__OS_dispatch_queue_attr?#>)
+            let queue = DispatchQueue(label: "com.vjre.Medicus")
+            dataOutput.setSampleBufferDelegate(self, queue: queue)
+            
+        }
+        catch let error as NSError {
+            NSLog("\(error), \(error.localizedDescription)")
+        }
         
         
         if err != nil {
@@ -138,8 +166,10 @@ class CameraController: UIViewController, UIImagePickerControllerDelegate, UINav
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // UNUSED
     // MARK: - Delegates
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    /*func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print("Does this get executedd?")
         var chosenImage = UIImage()
         chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
@@ -152,21 +182,35 @@ class CameraController: UIViewController, UIImagePickerControllerDelegate, UINav
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
-    }
+    }*/
     
     @IBAction func openCameraButton(_ sender: UIButton) {
-        /*if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            
-            let imagePicker = UIImagePickerController()
-
-            imagePicker.sourceType = .camera
-            imagePicker.modalPresentationStyle = .fullScreen
-            self.present(imagePicker, animated: true, completion: nil)
-        }*/
+        imageView.superview?.bringSubview(toFront: imageView)
         
+        print("Should take a picture")
+        let output = AVCapturePhotoOutput()
+        
+        
+    }
+    /*
+    func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
+        let i = previewPhotoSampleBuffer as! UIImage
+        print("he")
+        imageView.image = i
     }
     
     
-    //func imagePickerController(picker: UIImagePicker)
-   
+    func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
+        
+        // Here you collect each frame and process it
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.noneSkipFirst.rawValue | CGBitmapInfo.byteOrder32Little.rawValue)
+        imageView.image = UIImage(cgImage: bitmapInfo as! CGImage)
+        print(bitmapInfo)
+    }
+    
+    func captureOutput(captureOutput: AVCaptureOutput!, didDropSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
+        // Here you can count how many frames are dopped
+    }*/
+    
+    
 }

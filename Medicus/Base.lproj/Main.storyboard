@@ -189,7 +189,7 @@ Symptoms include redness, itching, and tearing of the eyes. It can also lead to 
         <!--View Controller-->
         <scene sceneID="B35-SX-wVF">
             <objects>
-                <viewController id="YcS-T8-0A1" sceneMemberID="viewController">
+                <viewController id="YcS-T8-0A1" customClass="ViewController" customModule="Medicus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OBh-OM-EZb"/>
                         <viewControllerLayoutGuide type="bottom" id="ZhH-rj-L2g"/>
