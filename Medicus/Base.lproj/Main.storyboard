@@ -92,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="189.59999999999999" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Report Controller-->
         <scene sceneID="akQ-eY-OEh">
             <objects>
-                <viewController id="Lz6-gh-Feg" sceneMemberID="viewController">
+                <viewController id="Lz6-gh-Feg" customClass="ReportController" customModule="Medicus" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VpN-Hf-G5e"/>
                         <viewControllerLayoutGuide type="bottom" id="owG-Je-Dx7"/>
