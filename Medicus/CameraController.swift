@@ -58,7 +58,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
         
         // Try to initialize the audioplayer
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: music! ))
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: music!))
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
             try AVAudioSession.sharedInstance().setActive(true)
         }
@@ -228,7 +228,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
         
         print("Should take a picture")
         let output = AVCapturePhotoOutput()
-        
+        audioPlayer.play()
         
     }
     /*

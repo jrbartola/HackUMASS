@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E7136FD79AC78C66E6B125E /* Pods_Medicus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8322FF58F764987D34DF6655 /* Pods_Medicus.framework */; };
+		8868E9391DAA094700A1BF3F /* snap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8868E9381DAA094700A1BF3F /* snap.mp3 */; };
 		88AF60B51DA8AE5500F35436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF60B41DA8AE5500F35436 /* AppDelegate.swift */; };
 		88AF60B71DA8AE5500F35436 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF60B61DA8AE5500F35436 /* ViewController.swift */; };
 		88AF60BA1DA8AE5500F35436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88AF60B81DA8AE5500F35436 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		1A31AB35549717B8293BB620 /* Pods-Medicus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Medicus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Medicus/Pods-Medicus.debug.xcconfig"; sourceTree = "<group>"; };
 		8322FF58F764987D34DF6655 /* Pods_Medicus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Medicus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8868E9381DAA094700A1BF3F /* snap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = snap.mp3; sourceTree = SOURCE_ROOT; };
 		88AF60B11DA8AE5500F35436 /* Medicus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Medicus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88AF60B41DA8AE5500F35436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88AF60B61DA8AE5500F35436 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 		88AF60B31DA8AE5500F35436 /* Medicus */ = {
 			isa = PBXGroup;
 			children = (
+				8868E9381DAA094700A1BF3F /* snap.mp3 */,
 				88AF60CE1DA8C7E300F35436 /* Medicus-Bridging-Header.h */,
 				88AF60CB1DA8C24300F35436 /* MedicusPlayground.playground */,
 				88AF60B41DA8AE5500F35436 /* AppDelegate.swift */,
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88AF60BF1DA8AE5500F35436 /* LaunchScreen.storyboard in Resources */,
+				8868E9391DAA094700A1BF3F /* snap.mp3 in Resources */,
 				88AF60D71DA8E7E500F35436 /* GoogleService-Info.plist in Resources */,
 				88AF60BC1DA8AE5500F35436 /* Assets.xcassets in Resources */,
 				88AF60BA1DA8AE5500F35436 /* Main.storyboard in Resources */,
