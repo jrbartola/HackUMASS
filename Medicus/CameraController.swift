@@ -229,6 +229,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
         print("Should take a picture")
         let output = AVCapturePhotoOutput()
         audioPlayer.play()
+        cameraButton.tintColor = UIColor.clear
         
     }
     /*
@@ -269,6 +270,9 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
         segueButton.tintColor = UIColor.gray
     }
     
+    @IBAction func captureButtonPressed(_ sender: AnyObject) {
+        cameraButton.tintColor = UIColor.gray
+    }
     
     
 }
