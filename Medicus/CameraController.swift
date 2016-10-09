@@ -253,6 +253,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "diagnosisSegue" {
+            segueButton.tintColor = UIColor.clear
             if let destination = segue.destination as? ReportController {
                 destination.diagnosis = self.diagnosis
                 destination.confidence = self.confidence
@@ -264,6 +265,9 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
         }
     }
     
+    @IBAction func sendButtonPressed(_ sender: AnyObject) {
+        segueButton.tintColor = UIColor.gray
+    }
     
     
     

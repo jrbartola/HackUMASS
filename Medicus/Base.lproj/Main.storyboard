@@ -60,14 +60,12 @@
                                 <frame key="frameInset" minX="257" minY="569" width="118" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check2" translatesAutoresizingMaskIntoConstraints="NO" id="LuX-gF-T1W">
-                                        <frame key="frameInset" minX="26" minY="17" width="66" height="65"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uO2-S3-Fy7">
                                         <frame key="frameInset" minX="26" minY="17" width="66" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="check2"/>
                                         <connections>
+                                            <action selector="sendButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="zcV-kX-lkz"/>
                                             <segue destination="Lz6-gh-Feg" kind="show" identifier="diagnosisSegue" id="PAG-kZ-76e"/>
                                         </connections>
                                     </button>
