@@ -31,6 +31,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     @IBOutlet weak var scheme3: UIButton!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // If we find a device we'll store it here for later use
     var captureDevice : AVCaptureDevice?
@@ -61,6 +62,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
                 }
             }
         })*/
+        self.activityIndicator.isHidden = true
         
         let music = Bundle.main.path(forResource: "snap", ofType: "mp3")
         
@@ -293,12 +295,16 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         // 1. Perform call to clarifai API
         // 2. Fill out fields in the report controller view with information given by API
         if segue.identifier == "diagnosisSegue" {
-            sleep(1)
+            
+            
+            
             segueButton.tintColor = UIColor.clear
             if let destination = segue.destination as? ReportController {
+                sleep(1)
                 destination.diagnosis = self.diagnosis
                 destination.confidence = self.confidence
                 
@@ -310,8 +316,22 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     }
     
     @IBAction func sendButtonPressed(_ sender: AnyObject) {
+        toggleRefreshAnimation(true)
         segueButton.tintColor = UIColor.gray
+        
     }
+    
+    func toggleRefreshAnimation(_ on: Bool) {
+        segueButton.isHidden = on
+        activityIndicator.isHidden = !on
+        if on {
+            activityIndicator?.startAnimating()
+        } else {
+            activityIndicator?.stopAnimating()
+        }
+        
+    }
+    
     
     @IBAction func captureButtonPressed(_ sender: AnyObject) {
         cameraButton.tintColor = UIColor.gray

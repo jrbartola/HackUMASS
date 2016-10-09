@@ -53,7 +53,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFA-QN-bML">
                                         <frame key="frameInset" minX="139" minY="60" width="43" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="brain"/>
                                         <connections>
                                             <action selector="setCancer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ugk-xT-ER2"/>
                                         </connections>
@@ -61,7 +60,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1L-NF-UGx">
                                         <frame key="frameInset" minX="190" minY="60" width="43" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="brain"/>
                                         <connections>
                                             <action selector="setHives:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rdq-QT-pen"/>
                                         </connections>
@@ -86,11 +84,14 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MlY-Qc-Ynk">
                                         <frame key="frameInset" minX="-17" minY="60" width="43" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="brain"/>
                                         <connections>
                                             <action selector="setNone:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PDb-d0-jOh"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="dhO-aU-OEi">
+                                        <frame key="frameInset" minX="49" minY="39" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.31240366901943872" green="0.57781250000000006" blue="0.40256926505980656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -104,6 +105,7 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="dhO-aU-OEi" id="ELP-qS-MBl"/>
                         <outlet property="cameraButton" destination="2Oo-ih-Jgf" id="yEi-Im-XyM"/>
                         <outlet property="imageView" destination="5Bs-Xr-c0F" id="hUg-p6-dKQ"/>
                         <outlet property="scheme1" destination="MFA-QN-bML" id="E9m-NI-xyT"/>
