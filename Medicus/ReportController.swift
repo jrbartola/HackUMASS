@@ -20,6 +20,7 @@ class ReportController: UIViewController {
     let ringwormDesc = "Ringworm is a fungal infection of the skin. Typically it results in a red, itchy, scaly, circular rash. Hair loss may occur in the area affected. Symptoms begin four to fourteen days after exposure. Multiple areas can be affected at a given time.\n\nRisk factors include using public showers, contact sports such as wrestling, excessive sweating, contact with animals, obesity, and poor immune function."
     
     var diagnosis: String = ""
+    var confidence: Float = 0.0
     
     @IBOutlet weak var diseaseImageView: UIImageView!
     @IBOutlet weak var conditionDescriptionLabel: UILabel!
@@ -32,12 +33,12 @@ class ReportController: UIViewController {
         super.viewDidLoad()
         
         conditionNameLabel.text = diagnosis
-        let confidence = arc4random_uniform(3)
+        //let confidence = arc4random_uniform(3)
         
-        if confidence == 0 {
+        if confidence > 0.70 {
             confidenceLabel.text = "HIGH"
             confidenceLabel.textColor = UIColor.red
-        } else if confidence == 1{
+        } else if > 0.50 {
             confidenceLabel.text = "MEDIUM"
             confidenceLabel.textColor = UIColor.orange
         } else {

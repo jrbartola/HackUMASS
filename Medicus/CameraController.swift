@@ -26,6 +26,8 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     var captureDevice : AVCaptureDevice?
     var client: ClarifaiClient? = nil
     var picArr: [UIImage] = []
+    var diagnosis: String
+    var confidence: Float
     
     let imagePicker = UIImagePickerController()
     
@@ -37,6 +39,21 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
         
         let custom = CustomModel(applicaiton: client, disease: .cancer)
         picArr = custom.toHugeArray()
+        
+        let chosenPic = picArr[Int(arc4random_uniform(30))]
+        client.getConcepts(image: chosenPic, modelName: "Medicus-3", conceptCompletion: { (tupleArr) in
+            if let tuples = tupleArr {
+                if tuples.count != 0 {
+                    self.diagnosis = tuples[0].0
+                    self.confidence = tuples[0].1
+
+                    
+                }
+            }
+        })
+        
+        
+        
         
         imagePicker.delegate = self
         
@@ -224,26 +241,12 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "diagnosisSegue" {
-            let chosenPic = picArr[Int(arc4random_uniform(30))]
-            client?.getConcepts(image: chosenPic, modelName: "Medicus-3", conceptCompletion: { (tupleArr) in
-                if let tuples = tupleArr {
-                    if tuples.count != 0 {
-                        let diagnosis = tuples[0].0
-                        let confidence = tuples[0].1
-                        
-                        
-                        if let destination = segue.destination as? ReportController {
-                            
-                            print(diagnosis)
-                            destination.diagnosis = diagnosis
-                            
-                            
-                            
-                        }
-                        
-                    }
-                }
-            })
+            if let destination = segue.destination as? ReportController {
+                destination.diagnosis = self.diagnosis
+                destination.confidence = self.confidence
+                
+            }
+            
             
             
         }
