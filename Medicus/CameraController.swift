@@ -9,6 +9,7 @@
 import UIKit
 import MobileCoreServices
 import AVFoundation
+import Clarifai
 
 class CameraController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,
 AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
@@ -23,7 +24,8 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     // If we find a device we'll store it here for later use
     var captureDevice : AVCaptureDevice?
-    
+    var client: ClarifaiClient? = nil
+    var picArr: [ClarifaiImage] = []
     
     let imagePicker = UIImagePickerController()
     
@@ -33,6 +35,8 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
         let client = ClarifaiClient(apiKey: "vikmP0140G5t-f9_3pCztAoiAY7V0-30eil5I0Rc",
                                     secretKey: "YuOjJnxaSYVSzjxhdWy1x7MABUzCjLIsJW9R3sl2")
         
+        let custom = CustomModel(applicaiton: client, disease: .cancer)
+        picArr = custom.toHugeArray()
         
         imagePicker.delegate = self
         
@@ -220,28 +224,24 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "diagnosisSegue" {
+            let chosenPic = picArr[Int(arc4random_uniform(30))]
+            client.
             
             if let destination = segue.destination as? ReportController {
-                print("in the block")
+                
                 let rand = arc4random_uniform(3)
                 if rand == 0 {
                     destination.diagnosis = "Skin Cancer"
                     
-                    //destination.conditionDescriptionLabel.text = destination.cancerDesc
-                    print("cancers")
                 } else if rand == 1 {
                     destination.diagnosis = "Hives"
                     
-                    //destination.conditionDescriptionLabel.text = destination.hivesDesc
-                    print("ihives")
                 } else {
                     destination.diagnosis = "Ringworm"
                     
-                    //destination.conditionDescriptionLabel.text = destination.ringwormDesc
-                    print("ringworm")
                 }
-                print("ioutsude")
-                //destination.conditionNameLabel.text = destination.diagnosis
+                
+                
                 
             }
         }

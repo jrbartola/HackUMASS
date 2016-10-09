@@ -58,6 +58,38 @@ class ClarifaiClient {
         
     }
     
+    func getConcepts(image: UIImage, modelName: String, conceptCompletion: @escaping (([(String, Float)]?) -> Void)) {
+        let image = ClarifaiImage(image: image)
+        app.getModelByName(modelName, completion: { (model: ClarifaiModel?, error: Error?) in
+            
+            model?.predict(on: [image!], completion: { (output, error) in
+                //print(output)
+                if let outputs = output {
+                    
+                    var arr: [(String, Float)] = []
+                    // Iterate through concepts and add them to an array as Strings
+                    if (outputs.count == 0) {
+                        conceptCompletion(nil)
+                    } else {
+                        for concept in outputs[0].concepts {
+                            arr.append((concept.conceptName!, concept.score))
+                        }
+                    }
+                    
+                    conceptCompletion(arr)
+                } else {
+                    conceptCompletion(nil)
+                }
+                
+            })
+            
+        })
+    }
+    
+    
+    
+    
+    
     func addImage(url: String, concepts: [String]?) {
         let image = ClarifaiImage.init(url: url, andConcepts: concepts)
         //self.images.append(image!)
