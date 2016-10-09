@@ -31,6 +31,18 @@ class ReportController: UIViewController {
         super.viewDidLoad()
         
         conditionNameLabel.text = diagnosis
+        let confidence = arc4random_uniform(3)
+        
+        if confidence == 0 {
+            confidenceLabel.text = "HIGH"
+            confidenceLabel.textColor = UIColor.red
+        } else if confidence == 1{
+            confidenceLabel.text = "MEDIUM"
+            confidenceLabel.textColor = UIColor.orange
+        } else {
+            confidenceLabel.text = "LOW"
+            confidenceLabel.textColor = UIColor.green
+        }
         
         if (diagnosis == "Skin Cancer") {
             conditionDescriptionLabel.text = cancerDesc

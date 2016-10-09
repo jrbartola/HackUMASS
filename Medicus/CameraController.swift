@@ -30,6 +30,10 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let client = ClarifaiClient(apiKey: "vikmP0140G5t-f9_3pCztAoiAY7V0-30eil5I0Rc",
+                                    secretKey: "YuOjJnxaSYVSzjxhdWy1x7MABUzCjLIsJW9R3sl2")
+        
+        
         imagePicker.delegate = self
         
         captureSession.sessionPreset = AVCaptureSessionPresetHigh
@@ -221,12 +225,15 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
                 let rand = arc4random_uniform(3)
                 if rand == 0 {
                     destination.diagnosis = "Skin Cancer"
+                    destination.conditionDescriptionLabel.text = destination.cancerDesc
                 } else if rand == 1 {
                     destination.diagnosis = "Hives"
+                    destination.conditionDescriptionLabel.text = destination.hivesDesc
                 } else {
                     destination.diagnosis = "Ringworm"
-                    
+                    destination.conditionDescriptionLabel.text = destination.ringwormDesc
                 }
+                destination.conditionNameLabel.text = destination.diagnosis
                 
             }
         }
