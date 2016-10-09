@@ -49,7 +49,7 @@ class ReportController: UIViewController {
         if (diagnosis == "Skin Cancer") {
             conditionDescriptionLabel.text = cancerDesc
             diseaseImageView.image = UIImage(named: "skincancer6")
-            treatmentLabel.text = "Contact doctor immediately"
+            treatmentLabel.text = "Seek urgent care"
         } else if (diagnosis == "Hives") {
             conditionDescriptionLabel.text = hivesDesc
             diseaseImageView.image = UIImage(named: "hives3")

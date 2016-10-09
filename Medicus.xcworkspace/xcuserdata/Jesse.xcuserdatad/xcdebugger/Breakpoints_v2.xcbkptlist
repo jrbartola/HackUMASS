@@ -138,13 +138,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Medicus/CameraController.swift"
-            timestampString = "497683990.786253"
+            timestampString = "497691493.546669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
-            landmarkName = "captureOutput(captureOutput:didOutputSampleBuffer:fromConnection:)"
-            landmarkType = "7">
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "CameraController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -176,6 +176,22 @@
             startingLineNumber = "61"
             endingLineNumber = "61"
             landmarkName = "getConcepts(image:modelName:conceptCompletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Medicus/CameraController.swift"
+            timestampString = "497690872.092625"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "openCameraButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

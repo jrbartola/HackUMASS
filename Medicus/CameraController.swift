@@ -224,12 +224,17 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     }*/
     
     @IBAction func openCameraButton(_ sender: UIButton) {
-        imageView.superview?.bringSubview(toFront: imageView)
         
         print("Should take a picture")
         let output = AVCapturePhotoOutput()
         audioPlayer.play()
         cameraButton.tintColor = UIColor.clear
+        // TODO: Take picture and set it to the imageView background
+        let settings = AVCapturePhotoSettings()
+        settings.flashMode = .off
+        
+        let stillImageOutput = AVCaptureStillImageOutput()
+        stillImageOutput.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
         
     }
     /*
@@ -253,6 +258,8 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // 1. Perform call to clarifai API
+        // 2. Fill out fields in the report controller view with information given by API
         if segue.identifier == "diagnosisSegue" {
             sleep(2)
             segueButton.tintColor = UIColor.clear
@@ -274,6 +281,46 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     @IBAction func captureButtonPressed(_ sender: AnyObject) {
         cameraButton.tintColor = UIColor.gray
     }
+    
+    /*func takePhoto() {
+        //self.imagePicker.takePicture()
+        let videoConnection : AVCaptureConnection? = self.imageOutput?.connectionWithMediaType(AVMediaTypeVideo)
+        if (videoConnection != nil) {
+            self.imageOutput?.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: { (imageDataSampleBuffer, error) -> Void in
+                if (imageDataSampleBuffer != nil) {
+                    // Capture data as jpeg format
+                    let imageData : NSData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
+                    
+                    // Create UIImage from JPEG
+                    let image = UIImage(data: imageData)
+                    
+                    //UIImageWriteToSavedPhotosAlbum(image!, self, nil, nil)
+                    
+                    // TODO change size etc...
+                }
+            })
+        }
+    }*/
+    
+    func saveToCamera(sender: UITapGestureRecognizer) {
+        let output = AVCapturePhotoOutput()
+        if let videoConnection = output.connection(withMediaType: AVMediaTypeVideo) {
+            output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
+            
+        }
+    }
+    
+    func capture(_ captureOutput: AVCapturePhotoOutput,
+                 didFinishProcessingLivePhotoToMovieFileAt outputFileURL: URL,
+                 duration: CMTime,
+                 photoDisplay photoDisplayTime: CMTime,
+                 resolvedSettings: AVCaptureResolvedPhotoSettings,
+                 error: Error?){
+        print("executed")
+        print(outputFileURL)
+    }
+    
+    
     
     
 }

@@ -179,7 +179,7 @@ Symptoms include redness, itching, and tearing of the eyes. It can also lead to 
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Neosporin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHJ-zc-S3Q">
-                                        <frame key="frameInset" minX="199" minY="501" width="140" height="48"/>
+                                        <frame key="frameInset" minX="199" minY="501" width="160" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -318,7 +318,7 @@ Symptoms include redness, itching, and tearing of the eyes. It can also lead to 
         <image name="send" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PiV-Se-Jpn"/>
+        <segue reference="dcj-xQ-WpL"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

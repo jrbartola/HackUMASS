@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         usernameTextField.backgroundColor = UIColor.clear
         passwordTextField.backgroundColor = UIColor.clear
-        testAPI()
+        //testAPI()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
