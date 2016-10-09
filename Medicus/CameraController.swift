@@ -254,6 +254,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "diagnosisSegue" {
+            sleep(2)
             segueButton.tintColor = UIColor.clear
             if let destination = segue.destination as? ReportController {
                 destination.diagnosis = self.diagnosis

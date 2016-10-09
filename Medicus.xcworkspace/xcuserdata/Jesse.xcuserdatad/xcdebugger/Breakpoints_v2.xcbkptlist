@@ -138,13 +138,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Medicus/CameraController.swift"
-            timestampString = "497681730.851544"
+            timestampString = "497683990.786253"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
-            landmarkName = "CameraController"
-            landmarkType = "3">
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "captureOutput(captureOutput:didOutputSampleBuffer:fromConnection:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
