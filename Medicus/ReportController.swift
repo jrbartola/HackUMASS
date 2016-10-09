@@ -26,6 +26,7 @@ class ReportController: UIViewController {
     @IBOutlet weak var conditionNameLabel: UILabel!
     @IBOutlet weak var confidenceLabel: UILabel!
     @IBOutlet weak var treatmentLabel: UILabel!
+    @IBOutlet weak var sendReportButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,16 @@ class ReportController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func sendReport(_ sender: AnyObject) {
+        let alert = UIAlertView()
+        alert.title = "Good to go!"
+        alert.message = "Your health report has been sent to your primary care physician for analysis."
+        alert.addButton(withTitle: "Okay")
+        alert.show()
+        self.performSegue(withIdentifier: "backButton", sender: AnyObject?.self)
+        
+        
+    }
     
 
 
