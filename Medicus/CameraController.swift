@@ -296,7 +296,7 @@ AVCapturePhotoCaptureDelegate, AVCaptureVideoDataOutputSampleBufferDelegate {
         // 1. Perform call to clarifai API
         // 2. Fill out fields in the report controller view with information given by API
         if segue.identifier == "diagnosisSegue" {
-            sleep(2)
+            sleep(1)
             segueButton.tintColor = UIColor.clear
             if let destination = segue.destination as? ReportController {
                 destination.diagnosis = self.diagnosis
