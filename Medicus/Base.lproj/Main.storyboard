@@ -146,6 +146,7 @@
                                     <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7U-rY-GcF">
                                         <frame key="frameInset" minY="23" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="barTintColor" red="0.0" green="0.20784313730000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <items>
                                             <navigationItem title="Report" id="HUZ-fq-Ni5">
                                                 <barButtonItem key="leftBarButtonItem" title="BackButton" style="plain" id="UoE-Ja-UOp">
@@ -158,6 +159,7 @@
                                                             <segue destination="BYZ-38-t0r" kind="showDetail" identifier="backButton" id="dcj-xQ-WpL"/>
                                                         </connections>
                                                     </button>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </barButtonItem>
                                             </navigationItem>
                                         </items>
@@ -175,14 +177,14 @@ Symptoms include redness, itching, and tearing of the eyes. It can also lead to 
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Treatment: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jG9-q4-PmR">
                                         <frame key="frameInset" minX="186" minY="469" width="124" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Neosporin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHJ-zc-S3Q">
                                         <frame key="frameInset" minX="199" minY="501" width="140" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -321,4 +323,5 @@ Symptoms include redness, itching, and tearing of the eyes. It can also lead to 
     <inferredMetricsTieBreakers>
         <segue reference="dcj-xQ-WpL"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
