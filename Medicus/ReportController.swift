@@ -48,7 +48,7 @@ class ReportController: UIViewController {
             conditionDescriptionLabel.text = cancerDesc
         } else if (diagnosis == "Hives") {
             conditionDescriptionLabel.text = hivesDesc
-        } else if (diagnosis == "Ringworm") {
+        } else {
             conditionDescriptionLabel.text = ringwormDesc
         }
         // Do any additional setup after loading the view.

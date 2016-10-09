@@ -67,7 +67,7 @@
                                         <frame key="frameInset" minX="26" minY="17" width="66" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="Lz6-gh-Feg" kind="show" id="PAG-kZ-76e"/>
+                                            <segue destination="Lz6-gh-Feg" kind="show" identifier="diagnosisSegue" id="PAG-kZ-76e"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -23,7 +23,7 @@ class ClarifaiClient {
         app.getModelByName(modelName, completion: { (model: ClarifaiModel?, error: Error?) in
             
             model?.predict(on: [image!], completion: { (output, error) in
-                print(output)
+                //print(output)
                 if let outputs = output {
                     
                     var arr: [(String, Float)] = []
