@@ -10,18 +10,18 @@ import UIKit
 
 class ReportController: UIViewController {
 
-    let cancerDesc = "Melanoma is one of the most widely-recognized forms of cancer worldwide. It is " +
-        "state to be one of the most deadly types as well. Symptoms include large red legions on the skin, " +
-        "malignant tumors, and discoloration. One may also expreience vomiting and malaise."
+    let cancerDesc = "Skin cancers are cancers that arise from the skin. They are due to the development of abnormal cells that have the ability to invade or spread to other parts of the body. Melanoma is one of the most widely-recognized forms of cancer worldwide. It is stated to be one of the most deadly types as well. Symptoms include large red legions on the skin, " +
+        "malignant tumors, and skin discoloration. One may also expreience vomiting and malaise."
     
     let hivesDesc = "Hives also known as urticaria, is a kind of skin rash with red, raised, itchy bumps. " +
         "They may also burn or sting. Often the patches of rash move around. Typically they last a few days and " +
-        "do not leave any long lasting skin changes. Fewer than 5% of cases last for more than six weeks."
+        "do not leave any long lasting skin changes. Fewer than 5% of cases last for more than six weeks.\n\nHives frequently occur following an infection or as a result of an allergic reaction such as to medication, insect bites, or food. Psychological stress, cold temperature, or vibration may also be a trigger."
     
-    let ringwormDesc = "Ringworm is a fungal infection of the skin. Typically it results in a red, itchy, scaly, circular rash. Hair loss may occur in the area affected. Symptoms begin four to fourteen days after exposure. Multiple areas can be affected at a given time."
+    let ringwormDesc = "Ringworm is a fungal infection of the skin. Typically it results in a red, itchy, scaly, circular rash. Hair loss may occur in the area affected. Symptoms begin four to fourteen days after exposure. Multiple areas can be affected at a given time.\n\nRisk factors include using public showers, contact sports such as wrestling, excessive sweating, contact with animals, obesity, and poor immune function."
     
     var diagnosis: String = ""
     
+    @IBOutlet weak var diseaseImageView: UIImageView!
     @IBOutlet weak var conditionDescriptionLabel: UILabel!
     @IBOutlet weak var conditionNameLabel: UILabel!
     @IBOutlet weak var confidenceLabel: UILabel!
@@ -47,10 +47,13 @@ class ReportController: UIViewController {
         
         if (diagnosis == "Skin Cancer") {
             conditionDescriptionLabel.text = cancerDesc
+            diseaseImageView.image = UIImage(named: "skincancer6")
         } else if (diagnosis == "Hives") {
             conditionDescriptionLabel.text = hivesDesc
+            diseaseImageView.image = UIImage(named: "hives3")
         } else {
             conditionDescriptionLabel.text = ringwormDesc
+            diseaseImageView.image = UIImage(named: "ringworm8")
         }
         // Do any additional setup after loading the view.
     }

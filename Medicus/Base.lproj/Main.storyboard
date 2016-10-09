@@ -108,10 +108,10 @@
                                 <frame key="frameInset" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name of condition" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yaf-8w-tJ0">
-                                        <frame key="frameInset" minX="39" minY="67" width="229" height="91"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skin Cancer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yaf-8w-tJ0">
+                                        <frame key="frameInset" minX="23" minY="67" width="229" height="91"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="37"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -154,12 +154,10 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" title="&lt; Back"/>
+                                                        <connections>
+                                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="backButton" id="dcj-xQ-WpL"/>
+                                                        </connections>
                                                     </button>
-                                                    <connections>
-                                                        <segue destination="BYZ-38-t0r" kind="popoverPresentation" identifier="backButton" popoverAnchorBarButtonItem="UoE-Ja-UOp" id="dBm-AC-DZG">
-                                                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                        </segue>
-                                                    </connections>
                                                 </barButtonItem>
                                             </navigationItem>
                                         </items>
@@ -170,7 +168,7 @@
                                         <string key="text">Conjunctivitis, or pink eye, is an irritation or inflammation of the conjunctiva, which covers the white part of the eyeball. It can be caused by allergies or a bacterial or viral infection. Conjunctivitis can be extremely contagious, and is spread by contact with eye secretions from someone who is infected.
 
 Symptoms include redness, itching, and tearing of the eyes. It can also lead to discharge or crusting around the eyes.</string>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -188,21 +186,21 @@ Symptoms include redness, itching, and tearing of the eyes. It can also lead to 
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MEDIUM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERe-b5-1nD">
-                                        <frame key="frameInset" minX="227" minY="135" width="83" height="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confidence level:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xv-42-hbf">
+                                        <frame key="frameInset" minX="72" minY="135" width="147" height="27"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdy-o4-vBC">
-                                        <frame key="frameInset" minX="72" minY="469" width="106" height="80"/>
+                                        <frame key="frameInset" minX="39" minY="460" width="129" height="89"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confidence level:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xv-42-hbf">
-                                        <frame key="frameInset" minX="84" minY="141" width="139" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MEDIUM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERe-b5-1nD">
+                                        <frame key="frameInset" minX="227" minY="132" width="88" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -217,6 +215,7 @@ Symptoms include redness, itching, and tearing of the eyes. It can also lead to 
                         <outlet property="conditionDescriptionLabel" destination="mmU-cN-Ty9" id="9Gy-Xy-tCJ"/>
                         <outlet property="conditionNameLabel" destination="Yaf-8w-tJ0" id="ebL-EP-i39"/>
                         <outlet property="confidenceLabel" destination="ERe-b5-1nD" id="eyB-Eh-ZQW"/>
+                        <outlet property="diseaseImageView" destination="cdy-o4-vBC" id="cgP-jZ-6k0"/>
                         <outlet property="sendReportButton" destination="rt4-lw-56T" id="mxC-1d-8Nm"/>
                         <outlet property="treatmentLabel" destination="kHJ-zc-S3Q" id="jC5-H9-bPI"/>
                     </connections>
@@ -320,6 +319,6 @@ Symptoms include redness, itching, and tearing of the eyes. It can also lead to 
         <image name="send" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PiV-Se-Jpn"/>
+        <segue reference="dcj-xQ-WpL"/>
     </inferredMetricsTieBreakers>
 </document>
